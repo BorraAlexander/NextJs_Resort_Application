@@ -16,7 +16,7 @@ const ProductDetail = () => {
     async function dynamicProductHandler() {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/admin/product/${id}`,
+          `https://resort-booking-app-mauve.vercel.app/api/admin/product/${id}`,
         );
         const result = await response.json();
         setRecord(result.data);
