@@ -25,7 +25,7 @@ const AddProduct = () => {
 
     try {
       const response = await fetch(
-        `https://resort-booking-app-mauve.vercel.app/api/admin/add-product`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/add-product`,
         {
           method: "POST",
           body: data,

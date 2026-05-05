@@ -60,7 +60,7 @@ const UserInvoice = ({ userId }) => {
 
     try {
       const response = await fetch(
-        `https://resort-booking-app-mauve.vercel.app/api/users/${bookingId}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/users/${bookingId}`,
         {
           method: "DELETE",
         },
