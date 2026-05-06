@@ -25,7 +25,7 @@ const AddProduct = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/add-product`,
+        `http://localhost:3000/api/admin/add-product`,
         {
           method: "POST",
           body: data,

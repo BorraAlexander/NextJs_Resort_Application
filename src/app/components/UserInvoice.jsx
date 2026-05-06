@@ -60,7 +60,7 @@ const UserInvoice = ({ userId }) => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/users/${bookingId}`,
+        `http://localhost:3000/api/users/${bookingId}`,
         {
           method: "DELETE",
         },
@@ -73,6 +73,7 @@ const UserInvoice = ({ userId }) => {
             (item) => item._id !== bookingId,
           ),
         }));
+       
       } else {
         throw new Error(result.message);
       }
@@ -82,7 +83,7 @@ const UserInvoice = ({ userId }) => {
   };
   return (
     <div className="invoice-container">
-      <h1>UserName: {invoice.userName}</h1>
+      <h1>UserName: {invoice.username}</h1>
       {invoice.bookings.length > 0 ? (
         invoice.bookings.map((item) => {
           const days = calulateDays(item.startDate, item.endDate);

@@ -16,7 +16,7 @@ const ProductDetail = () => {
     async function dynamicProductHandler() {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/product/${id}`,
+          `http://localhost:3000/api/admin/product/${id}`,
         );
         const result = await response.json();
         setRecord(result.data);
