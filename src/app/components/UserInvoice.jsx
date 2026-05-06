@@ -11,7 +11,7 @@ const UserInvoice = ({ userId }) => {
     async function fatchInvoice() {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/users/${userId}`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}api/users/${userId}`,
         );
         const newData = await response.json();
 
