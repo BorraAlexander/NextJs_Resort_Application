@@ -2,152 +2,252 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
-/* .loginBody {
-    height: 100vh;
-    background: linear-gradient(
-        rgba(243, 239, 239, 0.5), 
-        rgba(250, 248, 248, 0.322)
-    ), 
-    url('/background.jpg') no-repeat center center;
-    background-size: cover;
-    background-blend-mode: multiply; 
-} */
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  background: #f7f7f7;
+}
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
 
-/* Form container styling */
 .formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 16px;
   z-index: 1;
   position: relative;
-  background: rgba(133, 121, 121, 0.363);
-  padding: 20px;
+  background: rgba(133, 121, 121, 0.28);
   border-radius: 8px;
 }
 
 .formSection {
-  border: 1px solid gray;
   border: 2px solid rgb(165, 158, 158);
-  width: 40%;
+  width: min(520px, 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgb(3, 107, 90);
-  padding: 20px 0;
-  padding-top: 60px;
+  padding: 40px 24px 30px;
   color: white;
   border-radius: 10px;
+  gap: 14px;
 }
+
 .formSection h1 {
-  margin-top: -30px;
+  margin-top: -10px;
+  width: 100%;
+  text-align: center;
   border-bottom: 1px solid white;
+  padding-bottom: 8px;
 }
+
 .bannerImage {
   width: 100%;
 }
+
 .authLink {
   color: yellow;
   margin-top: 10px;
+  text-decoration: none;
 }
+
 .formSection h3 {
-  width: 80%;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 4px;
 }
-.formContainer input {
-  width: 80%;
-  height: 2.2rem;
-  margin: 10px;
-  font-size: large;
-  padding-left: 10px;
+
+.formContainer input,
+.formContainer textarea {
+  width: 100%;
+  max-width: 420px;
+  height: 2.5rem;
+  margin: 10px 0;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.94);
 }
+
 .formSection button {
-  padding: 10px 50px;
+  padding: 12px 36px;
   background: rgb(68, 68, 163);
   color: white;
   border: 1px solid white;
+  border-radius: 8px;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.formSection button:hover {
+  transform: translateY(-1px);
+  background: rgb(57, 57, 143);
 }
 
 .navSection {
   background-color: rgb(46, 43, 43);
   color: white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  height: 12vh;
   align-items: center;
-  padding: 0 20px;
+  gap: 12px;
+  min-height: 72px;
+  padding: 16px 20px;
   cursor: pointer;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
 }
-.user {
-  display: flex;
-  gap: 10px;
-  cursor: pointer;
+
+.navSection > * {
+  flex: 1 1 auto;
+  min-width: 140px;
 }
+
+.user,
+.contact,
+.bookings,
+.logout {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
 .link {
   color: white;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.bookings,
+.logout {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.bookings:hover,
+.logout:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .roomImage {
   border: 1px solid gray;
-  width: 200px;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
+
 .title {
   margin-bottom: 0;
   font-size: 1.2rem;
   font-weight: bold;
 }
+
 .productSection {
-  margin: 0 10%;
+  margin: 0 auto;
+  padding: 20px 10px;
+  max-width: 1200px;
 }
+
 .proDetail {
-  padding: 2% 5%;
+  padding: 20px;
   display: flex;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 16px;
   border: 1px solid gray;
   border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  align-items: flex-start;
 }
+
+.left,
+.center,
+.right {
+  flex: 1 1 240px;
+  min-width: 240px;
+}
+
 .center {
   position: relative;
-  width: 80%;
-  margin-left: 20px;
+  width: auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   color: rgb(90, 81, 81);
+  gap: 14px;
 }
+
 .price {
   margin-top: 10px;
   color: rgb(49, 43, 43);
+  font-size: 1.1rem;
 }
+
 .center h3 {
   margin-bottom: 5px;
 }
+
 .amenities {
   display: inline-block;
   margin-left: 2%;
 }
+
 .right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
+
 .right button {
-  padding: 15px 45px;
-  width: 100%;
+  padding: 12px 32px;
+  width: auto;
+  min-width: 160px;
+  border-radius: 8px;
+  white-space: nowrap;
 }
+
 .detail {
   background-color: rgb(40, 40, 204);
   border: 1px solid gray;
   color: white;
 }
+
 .book {
   background: green;
   border: 1px solid darkgreen;
@@ -155,98 +255,149 @@
 }
 
 .singleImage {
-  width: 600px;
-  height: 450px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
 }
+
 .singleSection {
   display: flex;
-  margin: 10px 50px;
-  padding: 10px 30px;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px auto;
+  padding: 20px 30px;
+  max-width: 1120px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+}
+
+.singleLeft {
+  flex: 1 1 320px;
+  min-width: 280px;
 }
 
 .singleCenter {
-  margin: 20px;
-  padding: 50px 0 20px 10px;
+  flex: 1 1 360px;
+  min-width: 280px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
+
 .singleDesc {
   text-align: justify;
-  font-size: small;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
+
 .singlePrice {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .singleAmen {
   display: inline-block;
-  margin: 5px;
+  margin: 5px 0;
 }
+
 .singleAmen span {
   color: orange;
 }
+
+.offer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .offer button {
   padding: 10px 30px;
   border: none;
   background: gold;
-  margin-top: 20px;
+  color: #202020;
+  border-radius: 8px;
 }
+
 .offer span {
   color: green;
   font-size: 2rem;
   position: relative;
   left: 10px;
 }
+
 .singleBtn {
   text-align: center;
   margin-top: 50px;
 }
+
 .singleBtn button {
-  padding: 10px 50px;
+  padding: 12px 50px;
+  width: 100%;
+  max-width: 260px;
   background: green;
   border: 1px solid orange;
   color: white;
+  border-radius: 8px;
 }
+
 .currentDate {
   border: 1px solid gray;
-  width: 400px;
-  height: 50px;
+  width: min(100%, 400px);
+  max-width: 100%;
+  min-height: 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #fff;
 }
+
 .calenderSection {
   display: flex;
   position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
+  gap: 12px;
   padding-top: 10px;
+  flex-wrap: wrap;
 }
+
 .dateRange {
   position: absolute;
-  top: 50px;
-  left: 30%;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
   border: 1px solid gray;
+  width: min(100%, 360px);
+  max-width: 92vw;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
+
 .calenderButton {
   margin-left: 10px;
-  padding: 0 50px;
+  padding: 0 30px;
   background: orange;
   color: white;
   border: 1px solid white;
   font-size: 1rem;
   height: 50px;
+  border-radius: 8px;
 }
-button {
-  cursor: pointer;
-}
-/* invoice */
 
 .invoice-container {
-  width: 80%;
+  width: min(100%, 900px);
   margin: 0 auto;
   padding: 20px;
   background-color: #f8f9fa;
@@ -294,93 +445,204 @@ button {
   color: #dc3545;
   margin-top: 20px;
 }
+
 .deleteBtn {
-  padding: 5px 15px;
-  margin-top: 5px;
+  padding: 10px 16px;
+  margin-top: 10px;
   background: red;
   color: white;
+  border: none;
+  border-radius: 6px;
 }
 
-/* media queries */
-
-@media (max-width: 580px) {
+@media (max-width: 1024px) {
   .formSection {
-    border: 2px solid white;
-    width: 80%;
+    width: min(560px, 100%);
+    padding: 36px 20px 28px;
   }
 
   .navSection {
-    width: 100vw;
-    font-size: x-small;
+    padding: 14px 16px;
   }
-  .title {
-    font-size: x-small;
+
+  .productSection {
+    padding: 18px 8px;
   }
+
+  .proDetail {
+    padding: 18px;
+  }
+
+  .singleSection {
+    padding: 18px 20px;
+  }
+
+  .dateRange {
+    top: 72px;
+  }
+
+  .calenderButton {
+    width: 100%;
+    max-width: 320px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .navSection {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .navSection > * {
+    flex: 1 1 100%;
+    min-width: 100%;
+    text-align: center;
+  }
+
   .contact {
     display: none;
   }
+
   .productSection {
-    height: fit-content;
+    margin: 0 4%;
   }
+
   .proDetail {
-    display: block;
-  }
-  .left {
-    background: #bdd5ed;
-  }
-  .center {
-    display: flex;
     flex-direction: column;
+    align-items: stretch;
   }
+
+  .left,
+  .center,
+  .right {
+    min-width: 100%;
+  }
+
+  .right {
+    align-items: center;
+  }
+
   .roomImage {
-    width: 265px;
-    margin-top: -10px;
+    max-width: 100%;
   }
-  .price {
-    text-align: center;
-    border-bottom: 2px solid gray;
-  }
-  .left .title {
-    font-size: 1rem;
-  }
+
   .singleSection {
-    display: flex;
     flex-direction: column;
-    width: 100vw;
-    margin: 0;
-    height: 120vh;
+    gap: 20px;
+    padding: 16px;
+    margin: 16px 8px;
   }
-  .singleImage {
-    width: 350px;
-    height: 200px;
-    margin-left: -20px;
-  }
+
   .singleCenter {
     width: 100%;
-    margin: 0;
-    padding: 0;
   }
-  .singleTitle {
-    text-align: center;
+
+  .singleBtn {
+    margin-top: 30px;
   }
-  .singlePrice {
-    text-align: center;
-    margin: 10px 0;
-  }
-  .loading {
-    margin-left: -100px;
-  }
-  .calenderSection {
-    padding: 0 20px;
-  }
+
   .currentDate {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dateRange {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .calenderSection {
+    padding: 10px 0;
+  }
+
+  .invoice-container {
+    width: min(100%, 92vw);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .formContainer {
+    padding: 24px 12px;
+  }
+
+  .formSection {
+    width: 100%;
+    padding: 28px 16px 24px;
+  }
+
+  .formSection h3 {
+    width: 100%;
+  }
+
+  .formContainer input,
+  .formContainer textarea {
+    font-size: 0.95rem;
+    height: 2.4rem;
+  }
+
+  .navSection {
+    font-size: 0.95rem;
+    padding: 14px 12px;
+  }
+
+  .title {
     font-size: 1rem;
   }
-  .dateRange {
-    left: 15px;
+
+  .bookings,
+  .logout {
+    width: 100%;
+    justify-content: center;
   }
+
+  .proDetail {
+    padding: 16px;
+  }
+
+  .right button {
+    width: 100%;
+    max-width: none;
+  }
+
+  .singleSection {
+    margin: 12px 4px;
+    padding: 16px;
+  }
+
+  .singleImage {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .singleCenter {
+    padding: 10px 0;
+  }
+
+  .offer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calenderButton {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dateRange {
+    width: min(100%, 92vw);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .invoice-container {
-    width: 300px;
-    margin: 0 20px;
+    width: min(100%, 92vw);
+    padding: 18px;
+  }
+
+  .deleteBtn {
+    width: 100%;
   }
 }
